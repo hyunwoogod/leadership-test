@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리더십 종합 진단</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <section id="start-screen" class="card center-content">
+            <div class="start-content">
+                <div class="icon-box">📊</div>
+                <h1 class="main-title">리더십<br>종합 진단</h1>
+                <p class="sub-text">
+                    당신의 리더는 어떤 유형입니까?<br>
+                    14개 문항으로 분석하는 <strong>LBAW 모델</strong>
+                </p>
+                
+                <div class="input-area">
+                    <input type="text" id="leader-name" class="input-field" placeholder="리더의 이름 입력" autocomplete="off">
+                </div>
+                
+                <button class="btn start-btn" onclick="startTest()">진단 시작하기</button>
+            </div>
+        </section>
+
+        <section id="question-screen" class="card hidden">
+            <div class="top-bar">
+                <span id="progress-text" class="step-badge">1 / 14</span>
+                <div class="progress-container">
+                    <div id="progress" class="progress"></div>
+                </div>
+            </div>
+            
+            <div class="question-area">
+                <h2 id="question-text">질문 내용</h2>
+            </div>
+            
+            <div class="options-container">
+                <button class="btn option-btn" onclick="selectOption(5)">매우 그렇다 (5)</button>
+                <button class="btn option-btn" onclick="selectOption(4)">그렇다 (4)</button>
+                <button class="btn option-btn" onclick="selectOption(3)">보통이다 (3)</button>
+                <button class="btn option-btn" onclick="selectOption(2)">그렇지 않다 (2)</button>
+                <button class="btn option-btn" onclick="selectOption(1)">매우 그렇지 않다 (1)</button>
+            </div>
+        </section>
+
+        <section id="result-screen" class="card hidden scroll-content">
+            <div class="result-header">
+                <span class="badge">ANALYSIS RESULT</span>
+                <p class="result-user"><span id="result-name" class="highlight">OOO</span> 님의 리더십 유형</p>
+            </div>
+            
+            <h1 id="result-code">LBAW</h1>
+            <h2 id="result-title">진정한 리더</h2>
+            
+            <div class="result-box">
+                <p id="result-desc">결과 설명</p>
+            </div>
+
+            <div class="detail-scores">
+                <h3>🔍 상세 코멘트</h3>
+                <ul id="score-list"></ul>
+            </div>
+            
+            <button class="btn restart-btn" onclick="location.reload()">처음으로 돌아가기</button>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
