@@ -11,15 +11,16 @@
     <div class="wrapper">
         <section id="start-screen" class="card center-content">
             <div class="start-content">
-                <div class="icon-box">📊</div>
+                <div class="icon-box">🧑‍💼</div>
                 <h1 class="main-title">리더십<br>종합 진단</h1>
                 <p class="sub-text">
-                    당신의 리더는 어떤 유형입니까?<br>
-                    14개 문항으로 분석하는 <strong>LBAW 모델</strong>
+                    당신의 리더는 '진정한 리더'일까요?<br>
+                    <strong>20개 문항</strong>으로 분석하는<br>
+                    <strong>Level & Type (LBAW)</strong> 진단
                 </p>
                 
                 <div class="input-area">
-                    <input type="text" id="leader-name" class="input-field" placeholder="리더의 이름 입력" autocomplete="off">
+                    <input type="text" id="leader-name" class="input-field" placeholder="평가할 리더의 이름" autocomplete="off">
                 </div>
                 
                 <button class="btn start-btn" onclick="startTest()">진단 시작하기</button>
@@ -28,7 +29,7 @@
 
         <section id="question-screen" class="card hidden">
             <div class="top-bar">
-                <span id="progress-text" class="step-badge">1 / 14</span>
+                <span id="progress-text" class="step-badge">1 / 20</span>
                 <div class="progress-container">
                     <div id="progress" class="progress"></div>
                 </div>
@@ -39,30 +40,39 @@
             </div>
             
             <div class="options-container">
-                <button class="btn option-btn" onclick="selectOption(5)">매우 그렇다 (5)</button>
-                <button class="btn option-btn" onclick="selectOption(4)">그렇다 (4)</button>
-                <button class="btn option-btn" onclick="selectOption(3)">보통이다 (3)</button>
-                <button class="btn option-btn" onclick="selectOption(2)">그렇지 않다 (2)</button>
-                <button class="btn option-btn" onclick="selectOption(1)">매우 그렇지 않다 (1)</button>
+                <button class="btn option-btn" onclick="selectOption(5)">매우 그렇다 (5점)</button>
+                <button class="btn option-btn" onclick="selectOption(4)">그렇다 (4점)</button>
+                <button class="btn option-btn" onclick="selectOption(3)">보통이다 (3점)</button>
+                <button class="btn option-btn" onclick="selectOption(2)">그렇지 않다 (2점)</button>
+                <button class="btn option-btn" onclick="selectOption(1)">매우 그렇지 않다 (1점)</button>
             </div>
         </section>
 
         <section id="result-screen" class="card hidden scroll-content">
             <div class="result-header">
-                <span class="badge">ANALYSIS RESULT</span>
-                <p class="result-user"><span id="result-name" class="highlight">OOO</span> 님의 리더십 유형</p>
+                <span class="badge">DIAGNOSIS RESULT</span>
+                <p class="result-user"><span id="result-name" class="highlight">OOO</span> 님의 리더십 분석</p>
             </div>
             
-            <h1 id="result-code">LBAW</h1>
-            <h2 id="result-title">진정한 리더</h2>
-            
-            <div class="result-box">
-                <p id="result-desc">결과 설명</p>
+            <div class="level-box">
+                <h3>🏆 리더십 레벨</h3>
+                <h1 id="result-level-title">이순신의 후예</h1>
+                <p id="result-total-score">총점: 00점</p>
+                <p id="result-level-desc">설명 텍스트</p>
             </div>
 
-            <div class="detail-scores">
-                <h3>🔍 상세 코멘트</h3>
-                <ul id="score-list"></ul>
+            <hr class="divider">
+
+            <h1 id="result-code">LBAW</h1>
+            <h2 id="result-type-title">진정한 리더</h2>
+            
+            <div class="result-box">
+                <p id="result-type-desc">결과 설명이 여기에 표시됩니다.</p>
+            </div>
+
+            <div class="feedback-box">
+                <h3>💬 솔루션 피드백</h3>
+                <p id="result-feedback">피드백 내용</p>
             </div>
             
             <button class="btn restart-btn" onclick="location.reload()">처음으로 돌아가기</button>
