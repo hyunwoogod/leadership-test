@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>리더십 종합 진단</title>
+    <title>리더를 평가해보세요!</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
         <section id="start-screen" class="card center-content">
             <div class="start-content">
                 <div class="icon-box">🧑‍💼</div>
-                <h1 class="main-title">리더십<br>종합 진단</h1>
+                <h1 class="main-title">리더를<br>평가해보세요!</h1>
                 <p class="sub-text">
                     당신의 리더는 '진정한 리더'일까요?<br>
                     <strong>20개 문항</strong>으로 분석하는<br>
@@ -20,7 +20,7 @@
                 </p>
                 
                 <div class="input-area">
-                    <input type="text" id="leader-name" class="input-field" placeholder="평가할 리더의 이름" autocomplete="off">
+                    <input type="text" id="leader-name" class="input-field" placeholder="평가할 리더의 이름" autocomplete="off" onkeypress="if(event.keyCode==13) {startTest();}">
                 </div>
                 
                 <button class="btn start-btn" onclick="startTest()">진단 시작하기</button>
@@ -67,7 +67,7 @@
             <h2 id="result-type-title">진정한 리더</h2>
             
             <div class="result-box">
-                <p id="result-type-desc">결과 설명이 여기에 표시됩니다.</p>
+                <p id="result-type-desc">결과 설명</p>
             </div>
 
             <div class="feedback-box">
@@ -76,6 +76,10 @@
             </div>
             
             <button class="btn restart-btn" onclick="location.reload()">처음으로 돌아가기</button>
+
+            <footer class="footer">
+                <p>문의: jinsleadership@gmail.com</p>
+            </footer>
         </section>
     </div>
 
